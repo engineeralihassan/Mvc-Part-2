@@ -17,6 +17,33 @@
     <h1>Component views in ASp.Net Core </h1>
     <p>Today we start from the Component Views and so on this is the
         notes that takes some additional and theory information . </p>
+        <p>in the shared folder we make a new item of razor layout vieew with the name of _Layout View . fter this define some content like make a navbar and links for the home and other pages 
+            after this the render body div . we make this view for all views we can make the ViewStart file and tell the defualt layourt for the views  Run the aplication now </p>
+            <p>for both of the pages like home and the about is need some of the common things we need to make the partial views for this but in this lecture i write some additional logic for this and make the component view </p>
+            <p>Make new folder in the project and named as ViewComponent in this folder make a simple c# class name GridViewComponent (anything you want)  . now we inherit this class in inherit from the ViewComponent
+                class an its in the mvc . every view componet have must the InvokeAsync method which is called automatically when the viewcomponent is called in the 
+                any view   . return type of this is Task IViewComponentResult> /IViewComponentResult  . then return View . in the shared folder we make new folder calld components its ixed  then another folder 
+            same as Viewcomponent class like in our example Grid . in the grid ad new view razor view empty add and select the razor view empty names Default.cshtml .
+            its presentation logic for the view component</p>
+            <p> in this we write some h1 tags . now we invoke the viewComponent in the indexView . we used the await component.InvokeAsync() method and
+                pass the name of the view in our case Grid as parameters . now we invoked the viewComponent in the view . what if we changed the viewcomponent name  . like in the place of Defualt we write sample
+                in this case we tell the return view method the view name like we pass the sample as the parameter . now the place of the heading we make a table in view component. 
+            we also invoke this component in the about view we invoke this another way like we used the tagHelper </p>
+            <h3>ViewComponent with viewData</h3>
+            <p>its possible to pass data from viewcomponent class to viewcomponent view . i want to send the object in the view . i make a folder is Models and create the  Person.cs class 
+                make the properties in this and make this class object in the view class and send the data by help of viewData or viewBag and then in the viewcomponent we
+                access this and prints the data we also imports the models namespace in the _importsView file so its make accessable in any file 
+                
+            </p>
+            <h3>ViewComponents as the stronglytyped viewComponents </h3>
+
+            <p>As like partial view we can also make the strongly typed viewComponents inasp.net  . we bind the specific model class with this view component . and by the help of @Model 
+                we can access the object that is passed from the viewComponent Class . </p>
+                <h3>ViewComponent with parameters</h3>
+                <p>like we wan to print the unique data every time when we invoke the viewcomponent its possible by the help of parametes . we pass the anoumimouse object in the viewcomponent
+                    invokeAsync method then we see the unique Values every time .   </p>
+
+
         
 
 </body>
