@@ -1,0 +1,17 @@
+﻿body {
+    background-color:#fff;
+    border:1px solid black;
+    padding:10px;
+}
+h1{
+    color:darkblue;
+    font-size:20px;
+    margin-top:10px;
+
+
+}
+p{
+    color:cadetblue;
+    padding-left:10px;
+    margin-top:7px;
+}
