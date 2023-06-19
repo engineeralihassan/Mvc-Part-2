@@ -123,14 +123,66 @@ servicelifetime.Trasient. </p>
             <<li>AddSingleton</li>
         </ul>
 
+        <h1>View Injection</h1>
+        <p>in asp.net core views are compiled as the c# classes . we also inject our service directly in the view so let see can it possible or not
+            we do this by at inject this service object is not privdedd by the controller
+              </p>
+              <h1>Best practices of Dependency Injection</h1>
+              <p>There are some good pratices we need to used while using DI in our project avoid some bad practices to used</p>
+              <ul>
+                  <li>used the GetRequired service in the child 
+                      scope of the method we avoid to used it in the method openly
+                      </li>
+                      <li>we create the child scope of the service when we need other wise its good the 
+                          global services 
+                      </li>
+                      <li>in the Entity framwork scope is done and control by itself so not need to do this in EF
+
+                      </li>
+                      <li>we not the dispose ethod to call it or do it manually becuase its duty of the IOC
+
+                      </li>
+                      <li>Avoid to inject the scoped or the
+                          transient services in the singleton service its in the memmory untill the project is run
+
+                      </li>
+                      <li>its bad to used the reference of the services else in the project becuase maybe its dispose at the time when he caled 
+
+                      </li>
+
+              </ul>
+    <h1>AutoFace</h1>
+    <p>Autoface is another IoC library for 
+        .net core means both are tightly coupled 
+
+    </p>
+
+    <p>in the built in container there are some limitation but in the 
+        autoface there are some new feature so some times we need to used the autoface in our project 
 
 
+    </p>
+    <p>The autocap is the 2 more lifetime service  </p>
+    <ul>
+        <li>Instance perowned</li>
+        <li>instancePerMachingScope</li>
+        <li>Supported the metaData For services</li>
+        <li></li>
 
-
-
-    ,p>
-
-
+    </ul>
+    <h3>How to enable the autoface</h3>
+    <p>right click on Dependencies > Manage nugetPackage >installed
+        > brows > search autofac by atuofac contributters >
+        select the version same as our project 6.3.0 > then >
+        Download  >
+    </p>
+    <p>We also need other package called the autofac.Extension.Dependency injection</p>
+    <p>search and click on the autofac.Extension.Dependency injection and click on install
+         </p>
+         <p>Enable the autoface in out project gi to program.cs and top most 
+             after web builder builder.Host.useServiceProviderFactory(new Autofaceservice())
+             we also need the import the extension . 
+         </p>
 
 
 
