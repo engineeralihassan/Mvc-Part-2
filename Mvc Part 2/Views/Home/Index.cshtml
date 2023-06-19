@@ -54,7 +54,82 @@
                   <h3>What is service</h3>
                   <p>The service is an abstraction layer bettween the prasantation layer and data layer</p>
                   <p>We make the new project by name the DEexample . then we edit the program.cs file  and after this </p>
-                  <p class="bp">its good idea to make the service is seperate class  library becuase its good in the </p>
+                  <p class="bp">its good idea to make the service is seperate class  library becuase its good in the use of the other things .  </p>
+                  <p>So  create the new project in the same namespace and then choose c# and in the third drop down list select the library  . select the class library simple .. 
+                      name the class library like serviceLayer 
+                      . the version yuo select must be same for the service and the project you make  . rrname the class like cities Service . This class includes the bussiness logic 
+                  any middle wear logic are in the service  . make a string list and make a contsturctor. then make the mathod that  return the list of cities .  Then we make the new controller in the main project 
+              MVC Empty controller . and create a view for this controller indx method . create the view bag title . create a shared folder in the views folder and add a new item  razor layout. 
+          also make the wwwroot folder in the directory . we create some page content in the layout . make  a private readonly property of type citiesService class . we need to add the reference
+          of the services in the web project to   access this service . right click on the project  then add then click project reference . alternative way is right click on dependencies 
+      then add project dependencies then we select the path of the service and check the ckeck box . now we import the import the namespace in the home controller or in the imports 
+  so we need to create the object of the cities service class . called instanciated the service . now we can class the methods or the variables of this class like getCities method calling 
+. we send the cities list in the view and after this we are able to connect with the view in the view we make the strongly typed view . now we use this list to view the data in the page   </p>
+<h2>Workflow of the services View or controller int asp.net core </h2>
+<p>lets runn the applications add breakpoint in  the controller services and view as well . go to browser and making a request to refresh the page the controller is execute first then 
+    the controll goes to the cities service and make objec of this then the controller methd is execute and controll goes into the service method and return the list of cities .
+    then we will return the list in the view . and print the view in the web page . </p>
+
+    <h1>Dependency inversion Principal</h1>
+    <p>First when we make the object of the class in the controller it indicates that the class is called and object is created  the controller should wait and its time consuming 
+        if you use the other classes like get the data from the data base like you use the hundred time services in diffrent time . its called client becuase its need also the third class to complete its executions
+        if you make the changes in the service it effect the controller directly its anothr problem . when we make the alternative service interchanging the the services is a problem . 
+    </p>
+    <h3>Solution all of the problems </h3>
+    <p>the solution is the Dependency inversion Principal . Dipp is a design principale in which the higher level modules is not depend on the lower level modules . so both are depend on the abstractions
+        </p>
+        <p>We make the a simple interface as a new project in the same namespace . write click on the project . add new project and select the . we create the class library and named as ServiceContracts
+            select the same .net version . lets create an interface in serviceContracts as name ICitiesService . make a method in the interface called getcities . then add dependencies in project references . 
+            then we used this and make the variable of this interface type . </p>
+            <h1>inversion of Controll </h1>
+            <p>Its an design pattern reuseable solution for the common problems which suggest loc container for implemantation of Dependency inversion principal  Dip . in the project progra.cs file 
+                we add the service description and make the things easier for us . first argument is the actual class then second is what class object we want to make then third is the service life time
+servicelifetime.Trasient. </p>
+<h1>Dependency injection </h1>
+<p>now the homecontroller is not ready to  get the object of the cities class or interface . Dependency injection in =s the design pattern . which is a technique for acheiving 
+    Inversion of controll detween clients and their dependencies .  high level compoents recieves the low level compoents object . 
+</p>
+<p>in this we pass the parameters to the homecontroller which make the object automatically</p>
+<h2>WorkFlow </h2>
+<p>The controller is get the request and Ioc container supplied a object of the cities interface in the home controller . thenwe get the object of the cities class service . we assign this object 
+    to the variable and lets use this . </p>
+    <h1>Methods Injections [from services ]</h1>
+    <p>if we want to inject the service in a specific method of a controller not for all the methods of a controller we can directly pass the 
+        parameters in this method and inject the service </p><h1>ServiceLifeTimes</h1>
+        <p>we giv three things in the service descriptore  1st is service name second is which we want to object and third is the lifetime of the service like transiant what they are   </p>
+        <p>There 3 types of the serviceLifeTimes is the dependency injection</p>
+        <ul>
+            <li>Transient</li>
+            <li>Scoped</li>
+            <li>Singleton</li>
+        </ul>
+        <p>bassically its the time when the object is crewated and when its destroy the service object automatically</p>
+<h3>Transient</h3>
+<p>Every time when the service is ijected the new service object is maked automatically . </p>
+<h3>Scoped</h3>
+<p>its create the object of the service when an browser request is get started and when this request 
+    is completed or end then its destroys this service object </p>
+    <h3>Singleton</h3>
+    <p>The service object is created when its ibnjected first time but for later time being the the same object 
+        is reused  not create the new one untill the application is shutdown  </p>
+        <h1>Service Scope</h1>
+        <p>When application is run the root scoped is automaticaaly created for each request each scoped is created every time .    </p>
+
+        <h1>short service called methods</h1>
+        <p>we used the AddserviceDescriptor but there are some other short methods we used to add services in the project</p>
+        <ul>
+            <li>AddTrasnsient</li>
+            <li>AssScoped</li>
+            <<li>AddSingleton</li>
+        </ul>
+
+
+
+
+
+
+    ,p>
+
 
 
 
