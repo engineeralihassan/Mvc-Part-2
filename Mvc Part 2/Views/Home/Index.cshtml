@@ -184,8 +184,59 @@ servicelifetime.Trasient. </p>
              we also need the import the extension . 
          </p>
 
+         <h1>Envirements </h1>
+         <p>Envirments are the system in wich the application is currently running
+             l.
+         </p>
+         <ul>
+             <li>Developments </li>
+             <li>Staging</li>
+             <li>Production</li>
 
+         </ul>
+         <h1>Envirement in luanch setting file</h1>
+         <p>by defualt when we create new asp.net core web application 
+             in the luanch setting file we can see the evirement variables by defualt it sets for production but we configure it what ever we want
+             like we change it with staging now our application is work in staging envirement . 
 
+         </p>
+         <p>Now we create the controller in project and create index view for the index method 
+             and in the views folder create a shared folder and make a layout in this 
+             and also make a viewstart file and give the view path.
+
+         </p>
+         <p>Changing the Envirement name is not diffrence in the order or
+             anything . then what the iffrence is make by this name  . in program.cs
+             write a check  app.envirement.isdevelopment(){
+                 ..............
+             }</p>
+             <h1>Envirement in controller</h1>
+             <p>sometimes we need the envirement variable value 
+                 in some controller or in services so we do this in this way
+
+             </p>
+             <p>We create a private filed in the controller readonly
+                 like webHostEnvirement make a constructor and in this we assign this to the value 
+                 now we are able to do same like program .
+                 cs in the controller method using  envirementName . we also show it in the view like 
+                 passing by viewbag . 
+
+             </p>
+             <h1>Envirement Tag Helpers</h1>
+             <p>some times we need to add some additional content 
+                 according to the envirement so we do this by this method
+                 envirement include="Enronmet1,envirenmet2" <br />
+                 html code here ...... <br />
+                 /envirment
+             </p>
+             for example we want to show the button if the envirement is 
+             development in the view and first we import all the tag Helpers 
+             and then make a button in the view and this is only shown when the envirement is development
+<h1>Process level envirements</h1>
+<p>remember that this luanch setting.json file is only for development server its not for the 
+    staging or deployment stage . now how we get this and set the envirement varaible in .net 
+    application</p>
 </body>
+
 
 </html>
