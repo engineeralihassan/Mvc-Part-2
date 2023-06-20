@@ -291,6 +291,53 @@ we also used thesecond method of the app.configration.getValue <--string>("keyNa
 
     </p>
     <h1>Hierarchical Configration </h1>
+    <p>we see the Hierarchical Configration in the form of for example we make a object by name weather api in this object we create the some 3 properties of this 
+        in the controller inthe action method we need to reed the client id ket value 
+        so we get this in this form  <br />
+    app.Configration.GetValue("weatherApi:ClientId") or 
+app.Configration["weatherApi:ClientID"] <br />
+
+
+</p>
+<p>But there is another method to read the values of the 
+    Heirarchical configrations . by Getsection(string key );
+        for example :
+        app.Configration.GetSection("weatherApi"")["ClientID"];
+
+
+</p>
+<h1>Options Pattern in configration</h1>
+<p>Some times we need only few properties in the object of configration and we wanrt to store these values in the class properties . first we make a modal class and then only those values are store in the 
+    properties of the class that we want from the configration object 
+only those properties read that we want otherwise not its called the optons pattern in the 
+configrations
+
+</p>
+<p>rigth click on the project  add a cs class in the project then make public properties same name as the configration properties name 
+    its an normal class . now we go to home controller while reading the 
+    values of the configration  the hav a method called Get  in this pass the value of the 
+    class name which we want to make object its automatically create object and assign its properties values from configration 
+    as we want 
+
+</p>
+<p>We have another way to do that we ahve an other method called Bind in which we need to first
+    create the class object and then we go to the main configration value  then bind the class object wit this </p>
+<p>The major diffrence between thenm is  </p>
+<h1>Configration as SErvice </h1>
+<p>Exceot the creating new object its better to inject the 
+    configration in the constructor as service  . 
+    for this in the program.cs file we tell the 
+    builder.services.
+    Configure<WeatherApiOptions>(builder.configrstion.
+        GetSection("WeatherApi"));
+
+     
+</p>
+
+<p>after this we inject this as a normal service like in the controller in the constructor 
+    Ioptions we get the same values as same we access by other methods 
+
+</p>
 
 </body>
 
