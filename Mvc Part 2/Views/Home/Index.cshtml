@@ -235,7 +235,63 @@ servicelifetime.Trasient. </p>
 <h1>Process level envirements</h1>
 <p>remember that this luanch setting.json file is only for development server its not for the 
     staging or deployment stage . now how we get this and set the envirement varaible in .net 
-    application . we do this by running some command in the command propt letd do this</p>
+    application .
+    we do this by running some command in the command 
+    propt letd do this</p>
+
+    <p>we search the terminal and open it make sure you are in the windows power shell
+        then go to the directory where you applicationis available 
+        like c:/aspnetcorecourse/example then run this command</p>
+        <p>dotnet run </p>
+        <p> diasable luanch.
+            jsonfile command : dotnet run  --no-launch-profile
+
+        </p>
+
+        <h1>Configrations </h1>
+        <p>Congigration are the kay value pairs are 
+            
+            the set of the common location and can be 
+            read from anywhere in the same application like coonection strings clientID, Api keys 
+            etc .... <br />
+            how we set the conig files and set and get the values in the 
+            files . by default there is an appsetting.json file in the project which have the 
+            we access this any where any service any controller any class etc
+            make new project 
+
+        </p>
+        <p>in the appsetting file we make a apir of key value as myKey:L "my key value"<
+            <br />
+            then we use the  map.endpoint in program.cs 
+            and access this mykey value in the program.cs 
+we also used thesecond method of the app.configration.getValue <--string>("keyName");
+    </p>
+    <p>We hav a method to set the defualt value to
+        the config ket like we set the ket 'x' is 10
+        if the value of the x is not present its sets 10 
+        to the x value 
+    </p>
+    <h1>Read configration in controller</h1>
+    <p>some times we need to get the configration value in the controller or the services 
+        then we inherit this by the Iconfigarationn Interface . 
+
+
+
+    </p>
+    <p>we make the new controller in the projct and in this controller we 
+        create a view for the index method its create an Views/Home /Index view 
+        in this view we write some HTml code  . then run the application its work perfect 
+    </p>
+    <p>We make a private property variable of Iconfigration type 
+     in the constructor we passed an object of the iconfigration 
+     and assing the private field equals to this . then in the index method by this private field we can accss the config keys values 
+     same like as we access in the program.cs through
+     configration[key] or configrstion.GetValue<string>("key");
+
+
+    </p>
+    <h1>Hierarchical Configration </h1>
+
 </body>
 
 
