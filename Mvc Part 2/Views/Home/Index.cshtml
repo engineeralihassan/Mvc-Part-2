@@ -337,6 +337,92 @@ configrations
 <p>after this we inject this as a normal service like in the controller in the constructor 
     Ioptions we get the same values as same we access by other methods 
 </p>
+<h1>Envirement specification configrations</h1>
+    <p>we make a file like appsetting.Development.json . we use this as appsettings.EnvirmentName.json .
+        in this if the value of the x =10 is appsetting.jsthen its ovverride the value of x by new value and shoew the value of the x is 23 ; 
+        on and x=23 in the appsetttings.EnvirementName.json
+    </p>
+<p>We new json file . its a normal file .
+    we can add values in this file .
+    we add some value in this and then . 
+    the envirement json file is read after </p>
+    <h1>Secret Manager </h1>
+    <p>if we store the secrete information in the file and push our code to the
+        any online code source like github then its accessible for every things so its good we store it in the 
+        file loccaly in out project . the solution is this in .net is secrete manager  .
+        
+    </p>
+   <p>The secrete managers store the user secrete 
+       info in a specific location in the local machine .
+       we need to anable the secrete manager by command its
+       store the sensisitve info store outside the source code 
+       
+   </p><p>We go tho the view and then terminal in visual studio 
+       then move the project folder name directory and run
+       command  "dotnet user-secrets init"  pres enter it 2 things 
+       generate json file and id of the usersecretefile .
+       we could not edit the secrete files directly we go to terminal 
+       and run command to set the keys in the secrete file 
+       like  "dotnet user-secrets set   "weatherApi:ClientID"
+       "The value of the client ID"
 
+   </p>
+   <h1>Envirement variables configrations</h1>
+   <p>its good for local to store the secrets in an seperate file in local machine but in production we have only the terminal
+       no the vs or any other tool .in that case we store secrets in envirement variables .
+       for this we use the windows or powershell terminal 
+       of the vs    . we set these like run this command "$Env:weatherapi_ClientIg="Client id value for the envirement varialbes"
+   </p>
+   <h1>Custome json  configrations </h1>
+   <p>we store the data in config files but if we store a lot
+        it messy things we solve this by making the seperate files
+  calles custome json file .   </p>
+  <p>add new json file in the project and add your values 
+      open your program.cs you setting for you Host 
+      and we see the we get the values from the seperate json file for our variables
+
+  </p>
+<h1>HTP Client Part 1</h1>
+<p>HTTp class is sending Http request to a specific HTtp Source through its Url 
+    and recieving responces from the same . like we get the lates stock info  fom other srver 
+    thats not present in you DB . create new project .stocks app
+
+
+</p>
+<p>in the programe.cs eable services  routing and static file then make controller in controller folder 
+    add new controller add route for the index method of
+    controller and make new razor layout in the shared folder . we use the font awesome icons in our app
+    by link 
+    we write the html for the layout  . 
+    we have already a css file for this then make a viewstart files and put the path of the 
+    laout view then we make new view razor view empty and the index view is created 
+    now we write some content for the view and rendered in the renderbody tag in the layout
+    
+
+
+
+
+</p>
+<p>we add the http service in the program.cs file 
+    then add new folder in the project called services add new item in this class names as myservices
+    in this class the inject in the constructor 
+    IhttpClientFactory 
+
+
+</p>
+<p>then in the method we create new instance of the gttp class and create client
+    new request by diffrent things .we make the service enable my service in the program.cs then inject this in the 
+    controller index methd and get this service 
+    result by calling its method in the controller index method
+    
+
+
+
+</p>
+<p>wwe enable the user secrets and put the finhub user token in this and then 
+    we make the modal class store the object we get from the api and show this in the 
+    view 
+
+</p>
 </body>
 </html>
